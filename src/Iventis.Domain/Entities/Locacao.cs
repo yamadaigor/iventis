@@ -1,4 +1,4 @@
-﻿using static Iventis.Domain.Validators.Enums;
+﻿using static Iventis.Domain.Utils.Enums;
 
 namespace Iventis.Domain.Entities
 {

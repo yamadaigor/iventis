@@ -5,7 +5,9 @@ namespace Iventis.App.Controllers
     [ApiController]
     public class LocacaoController : ControllerBase
     {
-        public IActionResult Index()
+        [HttpGet]
+        [Route("get-locacao")]
+        public IActionResult GetLocacao()
         {
             return Ok();
         }

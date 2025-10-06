@@ -1,4 +1,4 @@
-﻿namespace Iventis.Domain.Validators
+﻿namespace Iventis.Domain.Utils
 {
     public class Enums
     {
@@ -11,7 +11,7 @@
         }
 
         public enum PlanoLocacao
-        { 
+        {
             SeteDias = 7,
             QuinzeDias = 15,
             TrintaDias = 30,

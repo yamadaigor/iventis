@@ -1,17 +1,18 @@
 using Iventis.App.Data;
+using Iventis.App.Configuration;
 using Iventis.Infrastructure.Data;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Web;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
 // tabelas do Identity
 
@@ -26,10 +27,29 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
        .AddEntityFrameworkStores<AppIdentityDbContext>()
        .AddDefaultTokenProviders();
 
+//var key = "chave-token-05102025";
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        //options.TokenValidationParameters = new TokenValidationParameters
+        //{
+        //    ValidateIssuer = true,
+        //    ValidateAudience = true,
+        //    ValidateLifetime = true,
+        //    ValidateIssuerSigningKey = true,
+        //    ValidIssuer = "iventis-issuer",
+        //    ValidAudience = "iventis-audience",
+        //    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+        //};
+    });
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.ResolveDependencyInjection();
 
 var app = builder.Build();
 

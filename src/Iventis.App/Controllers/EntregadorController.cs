@@ -5,7 +5,9 @@ namespace Iventis.App.Controllers
     [ApiController]
     public class EntregadorController : ControllerBase
     {
-        public IActionResult Index()
+        [HttpGet]
+        [Route("get-entregador")]
+        public IActionResult GetEntregador()
         {
             return Ok();
         }

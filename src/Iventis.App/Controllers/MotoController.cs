@@ -6,8 +6,9 @@ namespace Iventis.App.Controllers
     public class MotoController : ControllerBase
     {
         // Colocar Filtros para claims.
-
-        public IActionResult Index()
+        [HttpGet]
+        [Route("get-moto")]
+        public IActionResult GetMoto()
         {
             return Ok();
         }

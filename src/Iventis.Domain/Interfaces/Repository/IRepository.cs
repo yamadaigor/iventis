@@ -1,7 +1,7 @@
 ﻿using Iventis.Domain.Entities;
 using System.Linq.Expressions;
 
-namespace Iventis.Domain.Interfaces
+namespace Iventis.Domain.Interfaces.Repository
 {
     public interface IRepository<T> : IDisposable where T : BaseEntity
     {

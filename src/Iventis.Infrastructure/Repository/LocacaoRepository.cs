@@ -1,5 +1,5 @@
 ﻿using Iventis.Domain.Entities;
-using Iventis.Domain.Interfaces;
+using Iventis.Domain.Interfaces.Repository;
 using Iventis.Infrastructure.Data;
 
 namespace Iventis.Infrastructure.Repository

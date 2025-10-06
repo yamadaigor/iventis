@@ -23,6 +23,9 @@
     <PackageReference Include="Microsoft.Identity.Web" Version="2.15.2" />
     <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.15.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="NetDevPack.Security.Jwt.AspNetCore" Version="8.2.2" />
+    <PackageReference Include="NetDevPack.Security.Jwt.Core" Version="8.2.2" />
+    <PackageReference Include="NetDevPack.Security.Jwt.Store.EntityFrameworkCore" Version="8.2.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
   </ItemGroup>

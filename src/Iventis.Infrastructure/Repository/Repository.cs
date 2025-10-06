@@ -1,5 +1,5 @@
 ﻿using Iventis.Domain.Entities;
-using Iventis.Domain.Interfaces;
+using Iventis.Domain.Interfaces.Repository;
 using Iventis.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
