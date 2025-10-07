@@ -34,6 +34,12 @@ namespace Iventis.Infrastructure.Mapping
             builder.HasMany(e => e.Locacoes)
                .WithOne(l => l.Entregador)
                .HasForeignKey(l => l.EntregadorId);
+
+            builder.HasIndex(m => m.Cnpj)
+                   .IsUnique();
+
+            builder.HasIndex(m => m.NumeroCnh)
+                  .IsUnique();
         }
     }
 }

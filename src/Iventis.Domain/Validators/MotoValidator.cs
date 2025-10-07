@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using Iventis.Domain.Entities;
+using Iventis.Domain.DTO;
 
 namespace Iventis.Domain.Validators
 {
-    public class MotoValidator : AbstractValidator<Moto>
+    public class MotoValidator : AbstractValidator<MotoDTO>
     {
         public MotoValidator()
         {

@@ -6,8 +6,7 @@
         {
             A,
             B,
-            C,
-            D
+            AB
         }
 
         public enum PlanoLocacao

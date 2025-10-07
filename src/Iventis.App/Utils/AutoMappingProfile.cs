@@ -11,6 +11,16 @@ namespace Iventis.App.Utils
             // Moto 
             CreateMap<Moto, MotoDTO>();
             CreateMap<MotoDTO, Moto>();
+
+            // Entregador 
+            CreateMap<Entregador, EntregadorDTO>();
+            CreateMap<EntregadorDTO, Entregador>();
+
+            // Locação 
+            CreateMap<Locacao, LocacaoDTO>();
+            CreateMap<LocacaoDTO, Locacao>();
+            CreateMap<Locacao, LocacaoDetalheDTO>();
+            CreateMap<LocacaoDetalheDTO, Locacao>();
         }
     }
 }

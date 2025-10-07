@@ -1,8 +1,6 @@
 ﻿using Iventis.Domain.DTO;
-using Iventis.Domain.Entities;
 using Iventis.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
 
 namespace Iventis.App.Controllers
 {

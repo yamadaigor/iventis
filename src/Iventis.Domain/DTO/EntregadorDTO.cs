@@ -1,8 +1,8 @@
 ﻿using static Iventis.Domain.Utils.Enums;
 
-namespace Iventis.Domain.Entities
+namespace Iventis.Domain.DTO
 {
-    public class Entregador : BaseEntity
+    public class EntregadorDTO
     {
         public string Identificador { get; set; }
         public string Nome { get; set; }
@@ -10,9 +10,6 @@ namespace Iventis.Domain.Entities
         public DateTime DataNascimento { get; set; }
         public string NumeroCnh { get; set; }
         public TipoCnh TipoCnh { get; set; }
-        public byte[] ImagemCnh { get; set; }
-
-        // EntityFramework Relationships
-        public IEnumerable<Locacao> Locacoes { get; set; }
+        public string ImagemCnh { get; set; }
     }
 }

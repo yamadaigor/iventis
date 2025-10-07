@@ -9,5 +9,13 @@
         }
         public bool Success { get; set; }
         public List<string> ErrorMessages { get; set; }
+
+        public void AddErrorMessage(string message)
+        {
+            if (Success)
+                Success = false;
+
+            ErrorMessages.Add(message);
+        }
     }
 }

@@ -21,12 +21,9 @@ namespace Iventis.Domain.Services
 
         public async Task<OperationResultDTO> AddMoto(MotoDTO moto)
         {
-            // valida se os dados estão prenchidos
-            var motoEntity = _mapper.Map<Moto>(moto);
-
             var operationresult = new OperationResultDTO();
 
-            var validationResult = new MotoValidator().Validate(motoEntity);
+            var validationResult = new MotoValidator().Validate(moto);
 
             if (!validationResult.IsValid)
             {
@@ -35,7 +32,8 @@ namespace Iventis.Domain.Services
             }
             else
             {
-                _motoRepository.Add(motoEntity);
+                var motoEntity = _mapper.Map<Moto>(moto);
+                await _motoRepository.Add(motoEntity);
             }
             return (operationresult);
         }
@@ -69,7 +67,7 @@ namespace Iventis.Domain.Services
             else
             {
                 moto.Placa = placa.Placa;
-                _motoRepository.Update(moto);
+                await  _motoRepository.Update(moto);
             }
 
             return operationResult;
@@ -100,7 +98,7 @@ namespace Iventis.Domain.Services
 
             if (motoEntity is not null)
             {
-                _motoRepository.Delete(guidId);
+                await _motoRepository.Delete(guidId);
             }
             else
             {
