@@ -1,21 +1,25 @@
 ﻿using FluentValidation;
-using Iventis.Domain.DTO;
+using Iventis.Domain.Entities;
 
 namespace Iventis.Domain.Validators
 {
-    public class UsuarioRegistroValidator : AbstractValidator<UsuarioRegistroDTO>
+    public class MotoValidator : AbstractValidator<Moto>
     {
-        public UsuarioRegistroValidator()
+        public MotoValidator()
         {
-            RuleFor(l => l.Nome)
+            RuleFor(m => m.Identificador)
             .NotEmpty()
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 
-            RuleFor(l => l.Email)
+            RuleFor(m => m.Ano)
             .NotEmpty()
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 
-            RuleFor(l => l.Senha)
+            RuleFor(m => m.Modelo)
+            .NotEmpty()
+            .WithMessage("{PropertyName} é de preenchimento Obrigatório");
+
+            RuleFor(m => m.Placa)
             .NotEmpty()
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
         }

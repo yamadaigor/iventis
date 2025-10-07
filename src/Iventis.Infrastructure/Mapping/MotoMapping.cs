@@ -12,6 +12,9 @@ namespace Iventis.Infrastructure.Mapping
 
             builder.HasKey(m => m.Id);
 
+            builder.Property(m => m.Identificador)
+                   .IsRequired();
+
             builder.Property(m => m.Ano)
                    .IsRequired()
                    .HasColumnType("varchar(4)");
@@ -22,6 +25,9 @@ namespace Iventis.Infrastructure.Mapping
             builder.Property(m => m.Placa)
                    .IsRequired()
                    .HasColumnType("varchar(4)");
+
+            builder.HasIndex(m => m.Placa)
+                   .IsUnique();
             
             builder.HasMany(m => m.Locacoes)
               .WithOne(l => l.Moto)

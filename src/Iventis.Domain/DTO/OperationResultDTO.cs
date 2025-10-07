@@ -1,8 +1,8 @@
 ﻿namespace Iventis.Domain.DTO
 {
-    public class ErrorMessageDTO
+    public class OperationResultDTO
     {
-        public ErrorMessageDTO()
+        public OperationResultDTO()
         {
             Success = true;
             ErrorMessages = new List<string>();

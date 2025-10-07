@@ -22,9 +22,9 @@ namespace Iventis.Domain.Services
             SignInManager = signInManager;
         }
 
-        public async Task<ErrorMessageDTO> RegisterUser(UsuarioRegistroDTO usuarioRegistro)
+        public async Task<OperationResultDTO> RegisterUser(UsuarioRegistroDTO usuarioRegistro)
         {
-            var response = new ErrorMessageDTO();
+            var response = new OperationResultDTO();
 
             var (IsValid, errorMessages) = Validate(new UsuarioRegistroValidator(), usuarioRegistro);
 
