@@ -9,12 +9,16 @@ namespace Iventis.Domain.Services
         {
             RetornoCalculoLocacaoDTO retornoCalculoLocacaoDTO = new RetornoCalculoLocacaoDTO();
 
-            retornoCalculoLocacaoDTO.QuantidadeDiasLocacao = CalcularQuantidadeDiasLocacao(dataInformada, locacao.DtPrevisaoTermino);
+            retornoCalculoLocacaoDTO.QuantidadeDiasLocacao = CalcularQuantidadeDiasLocacao(locacao.DtInicio, dataInformada);
 
-            if (dataInformada < locacao.DtPrevisaoTermino)
+            if (dataInformada.Date < locacao.DtPrevisaoTermino.Date)
+            {
                 retornoCalculoLocacaoDTO.ValorTotalLocacao = CalcularValorComMulta(locacao, dataInformada);
-            else if (locacao.DtPrevisaoTermino > dataInformada)
+            }
+            else if (dataInformada.Date > locacao.DtPrevisaoTermino.Date)
+            {
                 retornoCalculoLocacaoDTO.ValorTotalLocacao = CalcularValorDiasExcedentes(locacao, dataInformada);
+            }
             else
                 retornoCalculoLocacaoDTO.ValorTotalLocacao = CalcularValor(locacao.ValoDiaria, retornoCalculoLocacaoDTO.QuantidadeDiasLocacao);
 
@@ -51,7 +55,7 @@ namespace Iventis.Domain.Services
 
             var quantidadeDiasPlano = ((int)locacao.Plano);
 
-            var diasoEfetivados = CalcularQuantidadeDiasLocacao(dataInformada, locacao.DtPrevisaoTermino);
+            var diasoEfetivados = CalcularQuantidadeDiasLocacao(locacao.DtInicio, dataInformada);
             var diasExcedentes = diasoEfetivados - quantidadeDiasPlano;
 
             valorTotal = CalcularValor(locacao.ValoDiaria, quantidadeDiasPlano);
