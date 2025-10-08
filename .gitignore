@@ -7,48 +7,90 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+# Build outputs
+bin/
+obj/
 
-# .NET Core
-project.lock.json
-project.fragment.lock.json
-artifacts/
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
+# Auto-generated files
+*.generated.cs
 
-# NuGet Packages
+# Visual Studio cache files
+.vs/
+
+# Rider IDE files
+.idea/
+
+# Resharper files
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# NuGet packages
 *.nupkg
-# NuGet Symbol Packages
-*.snupkg
+# NuGet API keys file
+.nuget/NuGet.Config
+
+# ASP.NET Core publish folder
+publish/
+
+# Entity Framework migrations
+Migrations/
+
+# IIS Express
+/.vs/
+/iisexpress/
+
+# Dotnet watch files
+dotnet-watch.json
+
+# Local secrets and configuration files
+appsettings.*.json
+secrets.json
+
+# Debugger files
+*.pdb
+
+# Rider project files
+*.sln.iml
+
+# Dotnet tool manifest
+.dotnet_tools/
+
+# Logs
+*.log
+logs/
+
+# npm packages (if any front-end)
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# JetBrains Rider
+.idea/
+
+# Coverage results
+coverage/
+
+# Azure Functions local settings
+local.settings.json
+
+# User-specific VS Code files
+.vscode/
+
+# Dotnet user files
+*.dotsettings
 
 # Others
-~$*
-*~
-CodeCoverage/
-
-# MSBuild Binary and Structured Log
-*.binlog
-
-# MSTest test Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
-
-# NUnit
-*.VisualState.xml
-TestResult.xml
-nunit-*.xml
+*.vsix
+*.dbmdl
+*.bak
+*.backup
+*.swp
+*.sln.cache
