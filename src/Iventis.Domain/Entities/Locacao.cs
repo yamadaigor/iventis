@@ -4,6 +4,8 @@ namespace Iventis.Domain.Entities
 {
     public class Locacao : BaseEntity
     {
+        public string IdentificadorMoto { get; set; }
+        public string IdentificadorEntregador { get; set; }
         public Guid MotoId { get; set; }
         public Guid EntregadorId { get; set; }
         public DateTime DtInicio { get; set; }

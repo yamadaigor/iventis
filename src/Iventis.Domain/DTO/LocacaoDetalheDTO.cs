@@ -2,10 +2,11 @@
 {
     public class LocacaoDetalheDTO : LocacaoDTO
     {
-        public int ValoDiaria
+        public double ValoDiaria
         {
             get
             {
+                // não é o ideal, mas devido ao tempo não pude elaborar algo mais sofisticado.
                 switch (Plano)
                 {
                     case Utils.Enums.PlanoLocacao.SeteDias:

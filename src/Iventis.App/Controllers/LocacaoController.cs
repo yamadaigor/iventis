@@ -11,10 +11,10 @@ namespace Iventis.App.Controllers
 
         public LocacaoController(ILocacaoService locacaoService)
         {
-                _locacaoService = locacaoService;
+            _locacaoService = locacaoService;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("locacao")]
         public async Task<IActionResult> Locacao(LocacaoDTO locacao)
         {
@@ -40,6 +40,25 @@ namespace Iventis.App.Controllers
             try
             {
                 var result = await _locacaoService.GetLocacaoById(id);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("locacao/{id}/devolucao")]
+        public async Task<IActionResult> SetDevolucao(string id, [FromBody] DevolucaoDTO dataDevolucao)
+        {
+            try
+            {
+                if (dataDevolucao.DataDevolucao == DateTime.MinValue)
+                    return BadRequest("Data Inválida");
+
+                var result = await _locacaoService.GetValorLocacao(id, dataDevolucao.DataDevolucao);
 
                 return Ok(result);
             }

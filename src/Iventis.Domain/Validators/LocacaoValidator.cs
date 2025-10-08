@@ -7,23 +7,23 @@ namespace Iventis.Domain.Validators
     {
         public LocacaoValidator()
         {
-            RuleFor(m => m.EntregadorId)
+            RuleFor(m => m.IdentificadorEntregador)
             .NotEmpty()
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 
-            RuleFor(m => m.MotoId)
+            RuleFor(m => m.IdentificadorMoto)
             .NotEmpty()
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 
-            RuleFor(m => m.DataInicio)
+            RuleFor(m => m.DtInicio)
             .Must(data=> data != DateTime.MinValue)
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 
-            RuleFor(m => m.DataTermino)
+            RuleFor(m => m.DtTermino)
             .Must(data => data != DateTime.MinValue)
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 
-            RuleFor(m => m.DataPrevisaoTermino)
+            RuleFor(m => m.DtPrevisaoTermino)
             .Must(data => data != DateTime.MinValue)
             .WithMessage("{PropertyName} é de preenchimento Obrigatório");
 

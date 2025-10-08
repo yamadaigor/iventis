@@ -35,7 +35,7 @@ namespace Iventis.App.Controllers
 
         [HttpGet]
         [Route("motos")]
-        public async Task<IActionResult> GetMotoByPlaca(string placa)
+        public async Task<IActionResult> GetMotoByPlaca(string placa = null)
         {
             try
             {

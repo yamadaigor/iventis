@@ -4,10 +4,10 @@ namespace Iventis.Domain.DTO
 {
     public class LocacaoDTO 
     {
-        public string EntregadorId { get; set; }
-        public string MotoId { get; set; }
+        public string IdentificadorMoto { get; set; }
+        public string IdentificadorEntregador { get; set; }
         private DateTime _dataInicio { get; set; }
-        public DateTime DataInicio
+        public DateTime DtInicio
         {
             set
             {
@@ -22,8 +22,8 @@ namespace Iventis.Domain.DTO
                 return _dataInicio;
             }
         }
-        public DateTime DataTermino { get; set; }
-        public DateTime DataPrevisaoTermino { get; set; }
+        public DateTime DtTermino { get; set; }
+        public DateTime DtPrevisaoTermino { get; set; }
         public PlanoLocacao Plano { get; set; }
     }
 }

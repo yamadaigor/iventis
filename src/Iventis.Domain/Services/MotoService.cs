@@ -43,7 +43,7 @@ namespace Iventis.Domain.Services
             var motosDTO = new List<MotoDTO>();
 
             var motos = (await _motoRepository.Get(m => string.IsNullOrEmpty(placa) ||
-                                                        m.Placa.Equals(placa, StringComparison.InvariantCultureIgnoreCase))).ToList();
+                                                        m.Placa.ToLower() == placa.ToLower())).ToList();
 
             if (motos.Any())
                 motosDTO = _mapper.Map<List<MotoDTO>>(motos);
@@ -94,17 +94,7 @@ namespace Iventis.Domain.Services
 
             var guidId = new Guid(id);
 
-            var motoEntity = await _motoRepository.GetById(guidId);
-
-            if (motoEntity is not null)
-            {
-                await _motoRepository.Delete(guidId);
-            }
-            else
-            {
-                operationResult.Success = false;
-                operationResult.ErrorMessages.Add("Ocorreu um erro ao excluir: A moto não existe para o id informado");
-            }
+            await _motoRepository.Delete(guidId);
 
             return operationResult;
         }

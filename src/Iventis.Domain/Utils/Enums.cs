@@ -2,12 +2,12 @@
 {
     public class Enums
     {
-        public enum TipoCnh
-        {
-            A,
-            B,
-            AB
-        }
+        //public enum TipoCnh
+        //{
+        //    A,
+        //    B,
+        //    AB
+        //}
 
         public enum PlanoLocacao
         {

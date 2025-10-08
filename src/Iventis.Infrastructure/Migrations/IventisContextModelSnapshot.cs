@@ -35,9 +35,13 @@ namespace Iventis.Infrastructure.Migrations
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<byte[]>("ImagemCnh")
+                    b.Property<string>("Identificador")
                         .IsRequired()
-                        .HasColumnType("bytea");
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImagemCnh")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -47,10 +51,17 @@ namespace Iventis.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("TipoCnh")
-                        .HasColumnType("integer");
+                    b.Property<string>("TipoCnh")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Cnpj")
+                        .IsUnique();
+
+                    b.HasIndex("NumeroCnh")
+                        .IsUnique();
 
                     b.ToTable("Entregador", (string)null);
                 });
@@ -72,6 +83,14 @@ namespace Iventis.Infrastructure.Migrations
 
                     b.Property<Guid>("EntregadorId")
                         .HasColumnType("uuid");
+
+                    b.Property<string>("IdentificadorEntregador")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("IdentificadorMoto")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<Guid>("MotoId")
                         .HasColumnType("uuid");
@@ -98,15 +117,22 @@ namespace Iventis.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(4)");
 
+                    b.Property<string>("Identificador")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Modelo")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Placa")
                         .IsRequired()
-                        .HasColumnType("varchar(4)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Placa")
+                        .IsUnique();
 
                     b.ToTable("Moto", (string)null);
                 });

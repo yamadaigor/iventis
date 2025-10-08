@@ -23,9 +23,8 @@ namespace Iventis.Infrastructure.Mapping
                    .IsRequired();
 
             builder.Property(m => m.Placa)
-                   .IsRequired()
-                   .HasColumnType("varchar(4)");
-
+                   .IsRequired();
+                   
             builder.HasIndex(m => m.Placa)
                    .IsUnique();
             

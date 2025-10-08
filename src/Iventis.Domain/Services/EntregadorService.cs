@@ -52,7 +52,8 @@ namespace Iventis.Domain.Services
             }
             else
             {
-                entregador.ImagemCnh = Convert.FromBase64String(cnh.ImagemCnh);
+                entregador.ImagemCnh = cnh.ImagemCnh;
+                //entregador.ImagemCnh = Convert.FromBase64String(cnh.ImagemCnh); // não tive tempo suficiente pra ver essa questão. 
                 await _entregadorRepository.Update(entregador);
             }
 

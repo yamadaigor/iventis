@@ -6,5 +6,6 @@ namespace Iventis.Domain.Interfaces.Services
     {
         Task<OperationResultDTO> LocarMoto(LocacaoDTO locacao);
         Task<LocacaoDetalheDTO> GetLocacaoById(string id);
+        Task<RetornoCalculoLocacaoDTO> GetValorLocacao(string id, DateTime dataInformada);
     }
 }
